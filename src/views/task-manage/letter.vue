@@ -19,9 +19,19 @@
 
       <el-table-column width="180px" align="center" label="只发新增">
         <template slot-scope="scope">
-          <span v-show="false">  {{
+          <span v-if="false">  {{
             (() => {
               switch (JSON.parse(scope.row.Config).send_only) {
+              case 1:
+                return '√';
+              default:
+                return '';
+              }
+            })()
+          }}</span>
+          <span>  {{
+            (() => {
+              switch (scope.row.addNew) {
               case 1:
                 return '√';
               default:
