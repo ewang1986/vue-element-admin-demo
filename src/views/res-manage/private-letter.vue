@@ -12,7 +12,8 @@
 
       <el-table-column width="180px" align="center" label="分组名字">
         <template slot-scope="scope">
-          <span>{{ getGnameByGid(scope.row.gid) }}</span>
+          <span v-show="false">{{ getGnameByGid(scope.row.gid) }}</span>
+          <span>{{ scope.row.gname }}</span>
         </template>
       </el-table-column>
 

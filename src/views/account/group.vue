@@ -146,7 +146,7 @@ export default {
     // 请求列表接口
     console.log('__created__')
     this.getList()
-    this.getSearchList()
+    // this.getSearchList()
     this.token = getToken()
   },
   methods: {

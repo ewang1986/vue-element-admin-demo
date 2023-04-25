@@ -190,22 +190,22 @@ export default {
     // 账号数据刷新  同步数据  固定IP {"task_type":2,"version":1,"group":33123,"proxy_id":"-2","proxy_id_1":17238}
     // 系统代理 {"task_type":2,"version":1,"group":33123,"proxy_id":"-1"}
     accountDataRefreshSubmit() {
-      createTask(this.syncAccount).then(response => {
-        console.log(response)
-        if (response.status === 0) {
-          console.log('创建成功')
-          this.account_refresh_window_visible = false
-          this.refreshPage()
-        } else {
-          this.$message.error(response.msg)
-        }
-      })
+      // createTask(this.syncAccount).then(response => {
+      //   console.log(response)
+      //   if (response.status === 0) {
+      //     console.log('创建成功')
+      //     this.account_refresh_window_visible = false
+      //     this.refreshPage()
+      //   } else {
+      //     this.$message.error(response.msg)
+      //   }
+      // })
     },
     // 刷新页面数据
     refreshPage() {
       this.getList()
       this.getSearchList()
-      this.getResGroupList()
+      // this.getResGroupList()
     },
     getList() {
       this.listLoading = true

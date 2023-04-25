@@ -1,11 +1,11 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '试用版——海绵宝宝平台管理系统',
 
   /**
    * @type {boolean} true | false
    * @description Whether show the settings right-panel
    */
-  showSettings: true,
+  showSettings: false,
 
   /**
    * @type {boolean} true | false

@@ -56,7 +56,7 @@ export function fetchTaskList(data) {
  */
 export function GetResourceList(data) {
   return request({
-    url: '/GetResourceList',
+    url: '/vue-element-admin/GetResourceList',
     method: 'post',
     data
   })
@@ -67,7 +67,7 @@ export function GetResourceList(data) {
  */
 export function GetAccountList(data) {
   return request({
-    url: '/GetAccountList',
+    url: '/vue-element-admin/GetAccountList',
     method: 'post',
     data
   })
@@ -78,7 +78,7 @@ export function GetAccountList(data) {
  */
 export function GetRecouseGroupList(data) {
   return request({
-    url: '/GetRecouseGroupList',
+    url: '/vue-element-admin/GetRecouseGroupList',
     method: 'post',
     data
   })
@@ -111,7 +111,7 @@ export function createTask(data) {
  */
 export function GetAccountGroupList(data) {
   return request({
-    url: '/GetAccountGroupList',
+    url: '/vue-element-admin/GetAccountGroupList',
     method: 'post',
     data
   })
@@ -122,8 +122,8 @@ export function GetAccountGroupList(data) {
  */
 export function GetAccountSearchList() {
   return request({
-    url: '/GetAccountSearchList',
-    method: 'get'
+    url: '/vue-element-admin/GetAccountSearchList',
+    method: 'post'
   })
 }
 
@@ -132,7 +132,7 @@ export function GetAccountSearchList() {
  */
 export function GetFollowSearchList() {
   return request({
-    url: '/GetFollowSearchList',
+    url: '/vue-element-admin/GetFollowSearchList',
     method: 'get'
   })
 }
