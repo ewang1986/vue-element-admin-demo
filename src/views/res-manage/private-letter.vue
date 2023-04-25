@@ -145,7 +145,7 @@ export default {
     // 请求列表接口
     console.log('__created__')
     this.getList()
-    this.getResGroupList()
+    // this.getResGroupList()
   },
   methods: {
     // 控制表单项显示与否
@@ -198,20 +198,20 @@ export default {
     },
     // 添加资源
     addResSubmit() {
-      if (parseInt(this.resData.rtype) === 6) {
-        this.autoContent = this.resData.cover + '|' + this.resData.url + '|' + this.resData.title
-        this.resData.content = this.autoContent
-      }
-      AddResource(this.resData).then(response => {
-        console.log(response)
-        if (response.status === 0) {
-          this.$message.success('添加成功')
-          this.visible = false
-          this.refreshPage()
-        } else {
-          this.$message.error('请求异常')
-        }
-      })
+      // if (parseInt(this.resData.rtype) === 6) {
+      //   this.autoContent = this.resData.cover + '|' + this.resData.url + '|' + this.resData.title
+      //   this.resData.content = this.autoContent
+      // }
+      // AddResource(this.resData).then(response => {
+      //   console.log(response)
+      //   if (response.status === 0) {
+      //     this.$message.success('添加成功')
+      //     this.visible = false
+      //     this.refreshPage()
+      //   } else {
+      //     this.$message.error('请求异常')
+      //   }
+      // })
     }
   }
 }

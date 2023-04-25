@@ -12,13 +12,15 @@
 
       <el-table-column width="180px" align="center" label="账号分组">
         <template slot-scope="scope">
-          <span>{{ getGnameByGid(scope.row.Gid) }}</span>
+          <span v-show="false">{{ getGnameByGid(scope.row.Gid) }}</span>
+          <span>{{ scope.row.gname }}</span>
         </template>
       </el-table-column>
 
       <el-table-column width="180px" align="center" label="采集数据">
         <template slot-scope="scope">
-          <span>{{ getCollByFollowBatch(JSON.parse(scope.row.Config).follow_batch) }}</span>
+          <span v-show="false">{{ getCollByFollowBatch(JSON.parse(scope.row.Config).follow_batch) }}</span>
+          <span>{{ scope.row.gname }}</span>
         </template>
       </el-table-column>
 
@@ -54,7 +56,8 @@
       </el-table-column>
       <el-table-column width="180px" align="center" label="关注限制数">
         <template slot-scope="scope">
-          <span>{{ JSON.parse(scope.row.Config).follow_limit }}</span>
+          <span v-show="false">{{ JSON.parse(scope.row.Config).follow_limit }}</span>
+          <span>200</span>
         </template>
       </el-table-column>
       <el-table-column width="180px" align="center" label="创建时间">
@@ -172,8 +175,8 @@ export default {
     // 请求列表接口
     console.log('__created__')
     this.getList()
-    this.getSearchList()
-    this.getResGroupList(4)
+    // this.getSearchList()
+    // this.getResGroupList(4)
   },
   methods: {
     // TODO 创建关注任务 {"task_type":3,"version":1,"group":33123,"coll_batch":733758,"follow_num":"150",
@@ -193,8 +196,8 @@ export default {
     },
     refreshPage() {
       this.getList()
-      this.getSearchList()
-      this.getResGroupList(4)
+      // this.getSearchList()
+      // this.getResGroupList(4)
     },
     showCreateTaskWindow() {
       this.visible = true

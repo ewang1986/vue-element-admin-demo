@@ -12,13 +12,14 @@
 
       <el-table-column width="180px" align="center" label="账号分组">
         <template slot-scope="scope">
-          <span>{{ getGnameByGid(scope.row.Gid) }}</span>
+          <span v-show="false">{{ getGnameByGid(scope.row.Gid) }}</span>
+          <span>{{ scope.row.gname }}</span>
         </template>
       </el-table-column>
 
       <el-table-column width="180px" align="center" label="只发新增">
         <template slot-scope="scope">
-          <span>  {{
+          <span v-show="false">  {{
             (() => {
               switch (JSON.parse(scope.row.Config).send_only) {
               case 1:
@@ -223,11 +224,11 @@ export default {
     // 请求列表接口
     console.log('__created__')
     this.getList()
-    this.getSearchList()
+    // this.getSearchList()
     // 获取私信分组
-    this.getResGroupList(3)
+    // this.getResGroupList(3)
     // 获取固定IP分组
-    this.getResGroupList(4)
+    // this.getResGroupList(4)
   },
   methods: {
     // 获取指定私信分组下的组内消息
@@ -274,11 +275,11 @@ export default {
     },
     refreshPage() {
       this.getList()
-      this.getSearchList()
+      // this.getSearchList()
       // 获取私信分组
-      this.getResGroupList(3)
+      // this.getResGroupList(3)
       // 获取固定IP分组
-      this.getResGroupList(4)
+      // this.getResGroupList(4)
     },
     showCreateTaskWindow() {
       this.visible = true

@@ -31,6 +31,7 @@ for (let i = 0; i < 50; i++) {
     Id: '@increment',
     Uid: 1554,
     Batch: '0331第一批采集001',
+    gname: '第一批采集',
     Task_Type: 4,
     Sucess_Num: '@integer(300, 5000)',
     Faild_Num: '@integer(300, 5000)',
