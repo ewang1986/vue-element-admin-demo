@@ -46,7 +46,20 @@
       </el-table-column>
       <el-table-column width="180px" align="center" label="账号状态">
         <template slot-scope="scope">
-          <span>{{ scope.row.account_status }}</span>
+          <span v-if="false">{{ scope.row.account_status }}</span>
+          <span>  {{
+            (() => {
+              switch (scope.row.account_status) {
+              case 10:
+                return '正常';
+              case 11:
+                return '失效';
+              default:
+                return '';
+              }
+            })()
+          }}</span>
+
         </template>
       </el-table-column>
       <el-table-column width="180px" align="center" label="批次">

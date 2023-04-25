@@ -74,7 +74,7 @@ for (let i = 0; i < 50; i++) {
 const AccountList = []
 for (let i = 0; i < 50; i++) {
   AccountList.push(Mock.mock({
-    account_status: 11,
+    account_status: '@integer(9, 11)',
     batch: '100',
     create_time: +Mock.Random.date('T'),
     gname: '0323新增一批100',
