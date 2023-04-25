@@ -39,3 +39,134 @@ export function updateArticle(data) {
     data
   })
 }
+
+/**
+ * 获取任务列表
+ */
+export function fetchTaskList(data) {
+  return request({
+    url: '/vue-element-admin/GetTaskInfos',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取私信资源列表
+ */
+export function GetResourceList(data) {
+  return request({
+    url: '/GetResourceList',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取账号信息列表
+ */
+export function GetAccountList(data) {
+  return request({
+    url: '/GetAccountList',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取RecouseGroup列表
+ */
+export function GetRecouseGroupList(data) {
+  return request({
+    url: '/GetRecouseGroupList',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 添加资源
+ */
+export function AddResource(data) {
+  return request({
+    url: '/AddResource',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 创建任务
+ */
+export function createTask(data) {
+  return request({
+    url: '/CreateTask',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取账号分组列表
+ */
+export function GetAccountGroupList(data) {
+  return request({
+    url: '/GetAccountGroupList',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 获取账号搜索信息列表
+ */
+export function GetAccountSearchList() {
+  return request({
+    url: '/GetAccountSearchList',
+    method: 'get'
+  })
+}
+
+/**
+ * 获取账号FollowSearch列表
+ */
+export function GetFollowSearchList() {
+  return request({
+    url: '/GetFollowSearchList',
+    method: 'get'
+  })
+}
+
+/**
+ * 删除分组
+ */
+export function DeleteGroup(data) {
+  return request({
+    url: '/DeleteGroup',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 导入账号接口
+ */
+export function UploadAccount(data) {
+  return request({
+    url: '/UploadAccount',
+    method: 'post',
+    data
+  })
+}
+
+/**
+ * 添加分组
+ */
+export function CreateGroup(data) {
+  return request({
+    url: '/CreateGroup',
+    method: 'post',
+    data
+  })
+}
+

@@ -39,6 +39,108 @@ import nestedRouter from './modules/nested'
  * all roles can be accessed
  */
 export const constantRoutes = [
+
+  {
+    path: '/',
+    component: Layout,
+    // hidden: false,
+    redirect: '/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/task/index'),
+        name: 'Dashboard',
+        meta: { title: '主页', icon: 'dashboard', affix: false }
+      }
+    ]
+  },
+  {
+    path: '/task',
+    component: Layout,
+    name: 'task-manage',
+    alwaysShow: true,
+    meta: {
+      title: '采集管理',
+      icon: 'excel',
+      breadcrumb: false
+    },
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/views/task/list'),
+        name: 'Task', // 模块名。与模块 name一致
+        meta: {
+          title: '采集任务', // 标题。显示在浏览器标签上
+          icon: 'dashboard'
+        }
+      }
+    ]
+  },
+  {
+    path: '/account',
+    component: Layout,
+    // hidden: false,
+    redirect: '/index',
+    meta: {
+      title: '账号管理',
+      icon: 'user'
+    },
+    children: [
+      {
+        path: 'group',
+        component: () => import('@/views/account/group.vue'),
+        name: 'Group',
+        meta: { title: '账号分组', icon: 'dashboard', affix: false }
+      },
+      {
+        path: 'info',
+        component: () => import('@/views/account/info.vue'),
+        name: 'Info',
+        meta: { title: '账号信息', icon: 'dashboard', affix: false }
+      }
+    ]
+  },
+
+  {
+    path: '/task-manage',
+    component: Layout,
+    redirect: '/follow-collect',
+    meta: {
+      title: '任务管理',
+      icon: 'list'
+    },
+    children: [
+      {
+        path: 'follow-collect',
+        component: () => import('@/views/task-manage/follow-collect.vue'),
+        name: 'Follow-collect',
+        meta: { title: '关注采集', icon: 'dashboard', affix: false }
+      },
+      {
+        path: 'letter',
+        component: () => import('@/views/task-manage/letter.vue'),
+        name: 'Follow-collect',
+        meta: { title: '私信', icon: 'dashboard', affix: false }
+      }
+    ]
+  },
+  {
+    path: '/res-manage',
+    component: Layout,
+    alwaysShow: true,
+    meta: {
+      title: '资源管理',
+      icon: 'edit'
+    },
+    children: [
+      {
+        path: 'private-letter',
+        component: () => import('@/views/res-manage/private-letter.vue'),
+        name: 'Private-letter',
+        meta: { title: '私信资源', icon: 'dashboard', affix: false }
+      }
+    ]
+  },
   {
     path: '/redirect',
     component: Layout,
@@ -74,6 +176,7 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
+    hidden: true,
     children: [
       {
         path: 'dashboard',
@@ -86,6 +189,7 @@ export const constantRoutes = [
   {
     path: '/documentation',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -97,6 +201,7 @@ export const constantRoutes = [
   },
   {
     path: '/guide',
+    hidden: true,
     component: Layout,
     redirect: '/guide/index',
     children: [
@@ -131,6 +236,7 @@ export const constantRoutes = [
 export const asyncRoutes = [
   {
     path: '/permission',
+    hidden: true,
     component: Layout,
     redirect: '/permission/page',
     alwaysShow: true, // will always show the root menu
@@ -173,6 +279,7 @@ export const asyncRoutes = [
 
   {
     path: '/icon',
+    hidden: true,
     component: Layout,
     children: [
       {
@@ -185,13 +292,14 @@ export const asyncRoutes = [
   },
 
   /** when your routing map is too long, you can split it into small modules **/
-  componentsRouter,
-  chartsRouter,
-  nestedRouter,
-  tableRouter,
+  // componentsRouter,
+  // chartsRouter,
+  // nestedRouter,
+  // tableRouter,
 
   {
     path: '/example',
+    hidden: true,
     component: Layout,
     redirect: '/example/list',
     name: 'Example',
@@ -224,6 +332,7 @@ export const asyncRoutes = [
 
   {
     path: '/tab',
+    hidden: true,
     component: Layout,
     children: [
       {
@@ -238,6 +347,7 @@ export const asyncRoutes = [
   {
     path: '/error',
     component: Layout,
+    hidden: true,
     redirect: 'noRedirect',
     name: 'ErrorPages',
     meta: {
@@ -262,6 +372,7 @@ export const asyncRoutes = [
 
   {
     path: '/error-log',
+    hidden: true,
     component: Layout,
     children: [
       {
@@ -275,6 +386,7 @@ export const asyncRoutes = [
 
   {
     path: '/excel',
+    hidden: true,
     component: Layout,
     redirect: '/excel/export-excel',
     name: 'Excel',
@@ -312,6 +424,7 @@ export const asyncRoutes = [
 
   {
     path: '/zip',
+    hidden: true,
     component: Layout,
     redirect: '/zip/download',
     alwaysShow: true,
@@ -329,6 +442,7 @@ export const asyncRoutes = [
 
   {
     path: '/pdf',
+    hidden: true,
     component: Layout,
     redirect: '/pdf/index',
     children: [
@@ -348,6 +462,7 @@ export const asyncRoutes = [
 
   {
     path: '/theme',
+    hidden: true,
     component: Layout,
     children: [
       {
@@ -362,6 +477,7 @@ export const asyncRoutes = [
   {
     path: '/clipboard',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -375,6 +491,7 @@ export const asyncRoutes = [
   {
     path: 'external-link',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'https://github.com/PanJiaChen/vue-element-admin',
